@@ -1,1 +1,3 @@
-docker run -it -v /tmp/shared:/shared youtube-dl
+#sudo chcon -Rt svirt_sandbox_file_t /tmp/shared
+#docker run -it -v /tmp/shared:/shared --workdir /shared --user $(id -u):$(id -g) youtube-dl
+docker run -it -v /tmp/shared:/shared --workdir /shared youtube-dl
