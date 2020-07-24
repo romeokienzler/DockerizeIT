@@ -9,3 +9,5 @@ RUN chmod +x ./kubectl
 RUN mv ./kubectl /usr/local/bin/kubectl
 RUN minikube delete
 RUN rm -rf ~/.minikube
+RUN useradd -m -p -s /bin/bash minikube
+
