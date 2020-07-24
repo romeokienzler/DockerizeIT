@@ -1,2 +1,2 @@
-docker build --build-arg user=`id -u` --build-arg group=`id -g` -t  lightworks .
+docker build -t  lightworks .
 
