@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
-RUN apt update && apt install -y python3 python3-pip curl vim git
+RUN apt update && apt install -y python3 python3-pip curl vim git openjdk-11-jdk
 RUN pip3 install jupyterlab elyra
 RUN curl -sL https://deb.nodesource.com/setup_12.x |bash -
 RUN apt install -y nodejs
