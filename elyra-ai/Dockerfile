@@ -14,4 +14,3 @@ RUN echo "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py
 
 EXPOSE 8888
 
-
