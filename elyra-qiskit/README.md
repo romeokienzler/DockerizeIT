@@ -18,8 +18,13 @@ torchvision
 seaborn  
 pydot  
 
+## Download
+git clone https://github.com/romeokienzler/DockerizeIT.git
+
 
 ## Build
+cd DockerizeIt
+cd elyra-qiskit
 ./build.sh
 
 ## Run
