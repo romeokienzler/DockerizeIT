@@ -1,2 +1,2 @@
-docker build -t elyra-ai .
+docker build -t elyra-qiskit .
 
