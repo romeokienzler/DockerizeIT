@@ -1,4 +1,4 @@
-# Jupyter Lab/ElyraAI and Jupyter Notebook environment for QISKIT 
+# Jupyter Lab/ElyraAI environment for QISKIT 
 
 ## Build
 ./build.sh
