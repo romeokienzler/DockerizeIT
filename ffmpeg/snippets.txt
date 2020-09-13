@@ -1,0 +1,16 @@
+#concat https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg
+for file in `ls deeprl1.mp4 deeprl2.mp4`; do echo file $file; done > list.txt && ffmpeg -f concat -safe 0 -i list.txt -c copy deeprl3.mp4
+
+# normalize https://superuser.com/questions/323119/how-can-i-normalize-audio-using-ffmpeg
+
+# cut
+ffmpeg -in infile -ss 00:01:21 -t 00:03:34 -c copy outfile
+
+# speedup
+# https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video
+ffmpeg -i input.mkv -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]" -map "[v]" -map "[a]" output.mkv
+
+# image over audio https://superuser.com/questions/1041816/combine-one-image-one-audio-file-to-make-one-video-using-ffmpeg
+ffmpeg -loop 1 -y -i image8.jpg -i sound11.amr -shortest -acodec copy -vcodec mjpeg result.avi
+
+
