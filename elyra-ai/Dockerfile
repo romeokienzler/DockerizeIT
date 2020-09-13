@@ -15,5 +15,10 @@ RUN pip install torch
 RUN pip install torchvision
 RUN pip install seaborn
 RUN pip install pydot
+USER root
+RUN apt update && apt install -y python3-graphviz
+RUN apt update && apt install -y graphviz-dev
+USER jovyan
+#RUN pip install pygraphviz
 EXPOSE 8888
 
