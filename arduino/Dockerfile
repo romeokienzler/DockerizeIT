@@ -8,4 +8,6 @@ COPY arduino-1.8.13-linux64.tar.xz /
 RUN unxz /arduino-1.8.13-linux64.tar.xz
 RUN tar xvf arduino-1.8.13-linux64.tar
 RUN /arduino-1.8.13/install.sh
-
+RUN apt update && apt install -y python3
+RUN apt update && apt install -y vim
+CMD arduino

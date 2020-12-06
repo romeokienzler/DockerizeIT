@@ -1,0 +1,1 @@
+export arduino_root=$HOME/proj/docker_volumes/arduino
