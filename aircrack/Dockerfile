@@ -14,5 +14,8 @@ WORKDIR /
 RUN git clone https://github.com/secdev/scapy.git
 WORKDIR scapy
 RUN python3 setup.py install
-RUN git clone https://github.com/nikharris0/probemon.git
+RUN git clone https://github.com/romeokienzler/probemon.git
 WORKDIR probemon
+RUN chmod 755 probemon.py
+RUN apt update && apt install -y vim
+
