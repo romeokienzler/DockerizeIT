@@ -6,3 +6,4 @@ RUN apt update && apt install -y libglib2.0-0 libgl1-mesa-glx libgssapi-krb5-2 l
 RUN apt install -y --reinstall libxcb-xinerama0
 RUN pip3 install --upgrade pip wheel
 RUN pip3 install tasmotizer
+RUN pip3 install esptool

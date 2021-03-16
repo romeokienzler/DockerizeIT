@@ -1,0 +1,14 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: ssh
+    labels:
+      app: ssh
+  spec:
+    containers:
+      - name: driver
+        image: romeokienzler/ssh_server:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 22

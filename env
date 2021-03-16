@@ -1,2 +1,3 @@
 export arduino_root=$HOME/proj/docker_volumes/arduino
 export nodered_root=$HOME/proj/docker_volumes/nodered
+export tasmotizer_root=$HOME/proj/docker_volumes/tasmotizer

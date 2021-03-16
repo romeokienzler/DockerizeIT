@@ -10,4 +10,7 @@ RUN tar xvf arduino-1.8.13-linux64.tar
 RUN /arduino-1.8.13/install.sh
 RUN apt update && apt install -y python3
 RUN apt update && apt install -y vim
+RUN ln -s /usr/bin/python3 /usr/bin/python
+RUN apt update && apt install -y python3-pip
+RUN pip3 install pyserial
 CMD arduino
