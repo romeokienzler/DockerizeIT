@@ -12,6 +12,10 @@ RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
 RUN mkdir -p /home/jovyan/.local/share/jupyter/metadata
 RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
 
+USER root
+RUN apt update && apt install -y openjdk-11-jdk
+USER jovyan
+RUN pip install pyspark==3.1.1
 
 EXPOSE 8888
 CMD jupyter-lab --no-browser
