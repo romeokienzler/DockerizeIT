@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elyra-ai
+  namespace: default
+spec:
+  ports:
+    - port: 8888
+      protocol: TCP
+      targetPort: 8888
+      name: elyra-ai
+  externalIPs:
+    - "158.177.161.39"
+  selector:
+    app: nodered

@@ -17,5 +17,7 @@ RUN apt update && apt install -y openjdk-11-jdk
 USER jovyan
 RUN pip install pyspark==3.1.1
 
+RUN git config --global user.email "romeo.kienzler@ch.ibm.com"
+RUN git config --global user.name "Romeo Kienzer"
 EXPOSE 8888
 CMD jupyter-lab --no-browser

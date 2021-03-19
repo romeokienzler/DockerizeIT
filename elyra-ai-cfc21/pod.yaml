@@ -1,0 +1,39 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: elyra-ai
+    labels:
+      app: elyra-ai
+  spec:
+    containers:
+      - name: elyra-ai
+        image: romeokienzler/elyra-ai:latest
+        ports:
+          - containerPort: 8888
+        volumeMounts:	
+          - mountPath: /home/jovyan/work
+            name: elyra-work
+          - mountPath: /home/jovyan/.local/share/jupyter/metadata
+            name: elyra-runtimes
+    initContainers:
+    - name: init-elyra-work
+      image: ubuntu:20.04
+      command: ['sh', '-c', "chown -R 1000:1000 /home/jovyan/work"] 
+      volumeMounts:
+          - mountPath: /home/jovyan/work
+            name: elyra-work
+    - name: init-elyra-runtimes
+      image: ubuntu:20.04
+      command: ['sh', '-c', "chown -R 1000:1000 /home/jovyan/.local/share/jupyter/metadata"] 
+      volumeMounts:
+          - mountPath: /home/jovyan/.local/share/jupyter/metadata
+            name: elyra-runtimes
+    volumes:
+      - name: elyra-work
+        persistentVolumeClaim:
+          claimName: elyra-pv-claim-work
+      - name: elyra-runtimes
+        persistentVolumeClaim:
+          claimName: elyra-pv-claim-runtimes
+        
