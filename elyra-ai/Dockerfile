@@ -1,4 +1,4 @@
-FROM romeokienzler/elyra:2.1.0rc5
+FROM elyra/elyra@sha256:8d0576a8b2713959430f0156eb954f84758d795850cda7bc528c1042be9bd1f8
 #FROM elyra/elyra@sha256:51adf650556735f234c99c79c82c6dd0e5655387f903b43463fff476a0554fa9
 USER root
 RUN apt update && apt install -y wget vim tree zip unzip ssh 

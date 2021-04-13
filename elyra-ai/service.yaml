@@ -5,12 +5,12 @@ metadata:
   name: elyra-ai
   namespace: default
 spec:
+  type: NodePort
   ports:
     - port: 8888
       protocol: TCP
       targetPort: 8888
+      nodePort: 32111
       name: elyra-ai
-  externalIPs:
-    - "158.177.161.39"
   selector:
-    app: nodered
+    app: elyra-ai

@@ -1,23 +1,7 @@
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: elyra-pv-volume-work
-  labels:
-    type: local
-    app: elyra-ai
-spec:
-  storageClassName: manual
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/home/jovyan/work"
----
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: elyra-pv-claim-work
+  name: pvc-elyra-work
   labels:
     app: elyra-ai
 spec:
@@ -26,28 +10,12 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 1Gi
----
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: elyra-pv-volume-runtimes
-  labels:
-    type: local
-    app: elyra-ai
-spec:
-  storageClassName: manual
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/home/jovyan/.local/share/jupyter/metadata"
+      storage: 50Gi
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: elyra-pv-claim-runtimes
+  name: pvc-elyra-runtimes
   labels:
     app: elyra-ai
 spec:
