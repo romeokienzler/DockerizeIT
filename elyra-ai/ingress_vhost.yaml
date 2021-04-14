@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: elyra-ingress
+spec:
+  rules:
+  - host: "elyra.local.host"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888
