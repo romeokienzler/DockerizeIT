@@ -1,4 +1,4 @@
-kind create cluster --config=kind.yaml
+#kind create cluster --config=kind.yaml
 kubectl apply -f pv.yaml
 kubectl apply -f pvc.yaml
 kubectl apply -f pod_pvc.yaml

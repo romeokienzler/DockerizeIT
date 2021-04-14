@@ -6,13 +6,6 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: elyra-ai
-            port:
-              number: 8888
       - path: /login
         pathType: Prefix
         backend:
@@ -20,7 +13,56 @@ spec:
             name: elyra-ai
             port:
               number: 8888
+      - path: /elyra
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888 
+      - path: /git
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888 
+      - path: /lsp
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888 
+      - path: /kernelspecs
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888 
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888       
+      - path: /static
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888
       - path: /lab
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888
+      - path: /api
         pathType: Prefix
         backend:
           service:
