@@ -14,4 +14,14 @@ spec:
             name: ml-pipeline-ui
             port:
               number: 80
+  - host: "minio.local.host"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: minio-service
+            port:
+              number: 9000
 
