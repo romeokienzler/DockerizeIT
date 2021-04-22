@@ -8,7 +8,7 @@
   spec:
     containers:
       - name: elyra-ai
-        image: quay.io/romeokienzler/elyra-ai:latest
+        image: quay.io/romeokienzler/elyra-ai:v1
         command: ["jupyter"]
         args: ["lab", "--NotebookApp.password='argon2:$argon2id$v=19$m=10240,t=10,p=8$nQoj91rLxttfnaNYAzx9Rw$+JEfHhDwHQd2rD3ixKVOCg'"]
         ports:
