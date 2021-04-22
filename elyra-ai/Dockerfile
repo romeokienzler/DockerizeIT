@@ -7,7 +7,7 @@ RUN chmod 755 idt-installer
 RUN ./idt-installer
 RUN chown -R jovyan /home/jovyan/.bluemix
 USER jovyan
-RUN pip install scikit-learn==0.24.1  aif360==0.3.0  tensorflow==2.4.0 lime==0.2.0.1 nodejs==0.1.1 ipywidgets==7.6.3 #aix360==0.2.1 import_ipynb==0.1.3 import_ipynb==0.1.3
+RUN pip install scikit-learn==0.24.1  aif360==0.3.0 lime==0.2.0.1 nodejs==0.1.1 ipywidgets==7.6.3 #aix360==0.2.1 import_ipynb==0.1.3 import_ipynb==0.1.3 wget==3.2 ansible==3.1.0 wget==3.2 gitpython==3.1.14 ansible==3.1.0 pandas==1.2.1 scikit-learn==0.24.1 aif360==0.3.0 nodejs==0.1.1 ipywidgets==7.6.3 lime==0.2.0.1 wget==3.2 kfp-tekton==0.6.1 kfserving==0.4.1
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
 RUN mkdir -p /home/jovyan/.local/share/jupyter/metadata
 RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
