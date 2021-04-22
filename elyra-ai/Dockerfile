@@ -1,5 +1,5 @@
-FROM elyra/elyra:dev
-#FROM elyra/elyra@sha256:51adf650556735f234c99c79c82c6dd0e5655387f903b43463fff476a0554fa9
+#FROM elyra/elyra:dev
+FROM elyra/elyra@sha256:6c4c2178bde39eb2c22ae5ef7b043cf514e67c637e07918ea054b54318adbef8
 USER root
 RUN apt update && apt install -y wget vim tree zip unzip ssh 
 RUN wget https://raw.githubusercontent.com/IBM-Cloud/ibm-cloud-developer-tools/master/linux-installer/idt-installer
