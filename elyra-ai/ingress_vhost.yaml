@@ -14,3 +14,14 @@ spec:
             name: elyra-ai
             port:
               number: 8888
+  - host: "services-uscentral.skytap.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888
+
