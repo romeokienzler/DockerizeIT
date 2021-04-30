@@ -11,7 +11,7 @@
 
 
 sudo xhost +
-sudo cryptsetup luksOpen ~/proj/1codait/docker_volumes/bitmessage.luks.img bitmessage.decrypted.img
+sudo cryptsetup luksOpen ~/proj/docker_volumes/bitmessage.luks.img bitmessage.decrypted.img
 sudo mount /dev/mapper/bitmessage.decrypted.img -t ext4 ~/docker_volumes_decrypted/bitmessage
 docker run -it --net=host --ipc=host -e DISPLAY=$DISPLAY -v ~/docker_volumes_decrypted/bitmessage:/root/.config/ -v /tmp/.X11-unix:/tmp/.X11-unix --env="QT_X11_NO_MITSHM=1"  bitmessage
 sudo umount  ~/docker_volumes_decrypted/bitmessage
