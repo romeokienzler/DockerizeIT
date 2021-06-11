@@ -1,4 +1,5 @@
-FROM elyra/elyra:2.3.0b0
+FROM elyra/elyra:dev
+#FROM elyra/elyra:2.3.0b0
 #FROM elyra/elyra@sha256:6c4c2178bde39eb2c22ae5ef7b043cf514e67c637e07918ea054b54318adbef8
 USER root
 RUN apt update && apt install -y wget vim tree zip unzip ssh 
@@ -12,6 +13,8 @@ USER root
 RUN apt update && apt install -y openjdk-11-jdk
 USER jovyan
 RUN pip install pyspark==3.1.1
+RUN wget https://downloads.apache.org/spark/spark-3.1.1/spark-3.1.1-bin-hadoop2.7.tgz
+RUN tar xvfz spark-3.1.1-bin-hadoop2.7.tgz
 
 RUN git config --global user.email "romeo.kienzler@ch.ibm.com"
 RUN git config --global user.name "Romeo Kienzer"
