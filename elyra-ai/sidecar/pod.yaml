@@ -1,0 +1,14 @@
+piVersion: v1
+kind: Pod
+metadata:
+  name: spark-submitter
+spec:
+  containers:
+  - name: spark
+    image: romeokienzler/spark-py:v3.1.0
+    ports:
+    - containerPort: 9876
+  - name: sidecar
+    image: romeokienzler/sidecar:0.1
+    ports:
+        - containerPort: 8081
