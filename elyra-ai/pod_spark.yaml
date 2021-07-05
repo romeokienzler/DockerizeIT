@@ -9,4 +9,4 @@
     containers:
       - name: spark
         image: romeokienzler/spark-py:v2.3.0
-        command: ["/opt/spark/bin/spark-shell"]
+        command: ["/bin/bash", "-c ", "while true; do echo 1; sleep 1; done"]
