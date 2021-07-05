@@ -8,5 +8,5 @@
   spec:
     containers:
       - name: spark
-        image: ubuntu:20.04
+        image: bitnami/kubectl
         command: ["/bin/bash", "-c", "while true; do echo 1; sleep 1; done"]
