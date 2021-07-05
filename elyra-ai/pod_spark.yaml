@@ -1,0 +1,12 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: spark
+    labels:
+      app: spark
+  spec:
+    containers:
+      - name: spark
+        image: romeokienzler/spark-py:v2.3.0
+        command: ["while true; do echo 1; sleep 1; done"]
