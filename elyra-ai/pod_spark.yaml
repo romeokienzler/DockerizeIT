@@ -10,8 +10,3 @@
       - name: spark
         image: bitnami/kubectl
         command: ["/bin/bash", "-c", "while true; do echo 1; sleep 1; done"]
-      - name: kube-proxy-sidecar
-        image: bitnami/kubectl
-        command: ["kubectl", "proxy"]
-        ports:
-          - containerPort: 8001
