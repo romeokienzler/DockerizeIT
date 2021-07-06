@@ -15,3 +15,33 @@
         command: ["kubectl", "proxy"]
         ports:
           - containerPort: 8001
+--
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-spark
+  labels:
+    app: spark
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+--      
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-spark
+  labels:
+    type: local
+    app: spark
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/spark"
