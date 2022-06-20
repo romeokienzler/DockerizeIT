@@ -3,5 +3,5 @@
 #duplicity s3://s3.eu-de.cloud-object-storage.appdomain.cloud/backup-test-duplicity-deleteme .
 #duplicity proj s3://s3.eu-de.cloud-object-storage.appdomain.cloud/rkie-backup/
 #duplicity --allow-source-mismatch proj/ s3://s3.eu-de.cloud-object-storage.appdomain.cloud/rkie-backup/1codait/
-docker run -it -v /home/romeokienzler:/shared:Z --workdir /shared -v /home/romeokienzler/cred:/cred:Z -v /home/romeokienzler/Downloads/ftpfs:/nas --workdir /shared duplicity
+docker run -it -v /home/romeokienzler:/shared:Z --workdir /shared -v /home/romeokienzler/cred:/cred:Z duplicity
 
