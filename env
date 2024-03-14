@@ -3,3 +3,5 @@ export nodered_root=$HOME/proj/docker_volumes/nodered
 export tasmotizer_root=$HOME/proj/docker_volumes/tasmotizer
 export signal_root=$HOME/proj/docker_volumes/signal
 export session_root=$HOME/proj/docker_volumes/session
+export thunderbird_root=$HOME/proj/docker_volumes/thunderbird
+export firefox_root=$HOME/proj/docker_volumes/firefox
