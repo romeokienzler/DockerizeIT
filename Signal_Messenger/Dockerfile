@@ -1,16 +1,31 @@
-FROM ubuntu:23.10
-ENV DEBIAN_FRONTEND noninteractive
-RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
-RUN apt update && apt install -y curl gnupg wget
-RUN wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
-RUN cat signal-desktop-keyring.gpg | tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
-RUN echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | tee /etc/apt/sources.list.d/signal-xenial.list
-RUN apt update && apt install -y signal-desktop
-#RUN wget -O- https://updates.signal.org/desktop/apt/keys.asc | apt-key add -
-#RUN echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | tee -a /etc/apt/sources.list.d/signal-xenial.list
-#RUN apt update && apt install -y signal-desktop
-# RUN adduser --home /home/signal --shell /bin/bash signal --gecos "" --disabled-password
-# RUN chmod 4755 -R /opt/Signal/chrome-sandbox
-# USER signal
-CMD cd /shared
-CMD signal-desktop --no-sandbox
+FROM ubuntu:24.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt update && apt install -y \
+    curl \
+    gnupg \
+    wget \
+    ca-certificates \
+    libasound2t64 \
+    libnss3 \
+    libxss1 \
+    libgtk-3-0 \
+    libx11-xcb1 \
+    libxcb-dri3-0 \
+    libdrm2 \
+    libgbm1 \
+    libgl1 \
+    libgl1-mesa-dri \
+    mesa-utils \
+    dbus-x11 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > /usr/share/keyrings/signal-desktop-keyring.gpg
+
+RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main" \
+    > /etc/apt/sources.list.d/signal.list
+
+RUN apt update && apt install -y signal-desktop && rm -rf /var/lib/apt/lists/*
+
+CMD ["signal-desktop", "--no-sandbox"]

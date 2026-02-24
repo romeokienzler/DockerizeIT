@@ -1,4 +1,14 @@
-sudo xhost +
 source ../env
-docker run -d --net=host --ipc=host -e DISPLAY=$DISPLAY -v /home/romeokienzler/Downloads:/shared -v $signal_root:/root -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd --env="QT_X11_NO_MITSHM=1" signal
+xhost +local:docker
 
+docker run -it \
+  --net=host \
+  --ipc=host \
+  -v /home/romeokienzler/Downloads:/shared \
+  -v $signal_root:/root \
+  -e DISPLAY=$DISPLAY \
+  -e QT_X11_NO_MITSHM=1 \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  --device /dev/dri \
+  --device /dev/snd \
+  signal
